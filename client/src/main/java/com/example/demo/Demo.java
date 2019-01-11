@@ -16,7 +16,11 @@ public class Demo {
     @Value("${server.port}")
     String port;
     @RequestMapping("/hi")
-    public String home(@RequestParam String name) {
+    public String hi(@RequestParam String name) {
         return "hi "+name+",i am from port:" + port;
+    }
+    @RequestMapping("/home")
+    public String home() {
+        return "hi,i am from port:" + port;
     }
 }
