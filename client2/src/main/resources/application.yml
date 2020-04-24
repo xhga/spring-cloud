@@ -7,3 +7,12 @@ server:
 spring:
   application:
     name: service-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
