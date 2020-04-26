@@ -16,6 +16,7 @@
 		<module>client</module>
 		<module>client2</module>
 		<module>client-ribbon</module>
+		<module>client-zuul</module>
 	</modules>
 <!--	<parent>
 		<groupId>org.springframework.boot</groupId>
