@@ -22,6 +22,7 @@
 		<module>config-server</module>
 		<module>config-client</module>
 		<module>client-config</module>
+		<module>config-client-bus</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -70,6 +71,11 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-config</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 				<version>${spring-cloud.version}</version>
 			</dependency>
 			<dependency>
