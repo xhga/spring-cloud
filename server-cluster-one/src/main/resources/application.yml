@@ -1,0 +1,13 @@
+server:
+  port: 8751
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8752/eureka/
+
+spring:
+  application:
+    name: SERVER_CLUSTER_ONE
