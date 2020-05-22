@@ -6,7 +6,7 @@ server:
   port: 8763
 spring:
   application:
-    name: service-client2
+    name: service-client
 
 management:
   endpoints:

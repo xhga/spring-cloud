@@ -16,3 +16,6 @@ zuul:
     b:
       path: /b/**
       service-id: service-client2
+    c:
+      path: /c/**
+      service-id: service-ribbon
