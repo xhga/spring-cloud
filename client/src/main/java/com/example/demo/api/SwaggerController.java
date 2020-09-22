@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.api;
 
 
 import io.swagger.annotations.Api;
