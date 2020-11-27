@@ -7,3 +7,5 @@ server:
 spring:
   application:
     name: service-client
+  thymeleaf:
+    prefix:

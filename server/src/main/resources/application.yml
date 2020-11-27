@@ -4,7 +4,9 @@ eureka:
   instance:
     hostname: localhost
   client:
+    # 是否要注册到其他server上
     registerWithEureka: false
+    # 是否拉取服务注册信息
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

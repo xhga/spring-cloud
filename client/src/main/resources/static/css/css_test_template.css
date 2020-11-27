@@ -1,0 +1,12 @@
+.title{align-content: center;text-align: center;}
+#content_left{
+    height: 300px;
+    font-size: 40px;
+}
+#content_left_2{
+    top: 0px;
+    right: 0px;
+    height: 200px;
+    z-index: -2;
+}
+img{margin: 0px 0px;padding: 0px 0px}
