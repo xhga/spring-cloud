@@ -1,6 +1,8 @@
 package com.example.demo.util;
 
 
+import com.example.demo.model.pojo.PdfParam;
+import com.sun.management.OperatingSystemMXBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.cloud.commons.util.InetUtils;
@@ -9,6 +11,8 @@ import org.springframework.cloud.commons.util.InetUtilsProperties;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.management.ManagementFactory;
+import java.lang.ref.WeakReference;
 import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.util.ArrayList;
@@ -18,21 +22,17 @@ import java.util.List;
 
 @Slf4j
 public class SystemUtil {
+    private static OperatingSystemMXBean operatingSystemMXBean;
 
-   public static String getLocalIPv4Ip(){
+    static {
+        operatingSystemMXBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+    }
+
+    public static String getLocalIPv4Ip(){
        InetUtils inetUtils = new InetUtils(new InetUtilsProperties());
        InetAddress firstNonLoopbackAddress = inetUtils.findFirstNonLoopbackAddress();
        return firstNonLoopbackAddress.getHostAddress();
-   }
-
-   public  static  String getServiceAddress(String serverAddr){
-       String localIPv4Ip = getLocalIPv4Ip();
-       if (StringUtils.isNotBlank(serverAddr)&&localIPv4Ip.startsWith("127")){
-           return serverAddr;
-       }
-       return localIPv4Ip;
-
-   }
+    }
 
     public static BigDecimal getCpuUseRateByTOP() {
         String os = System.getProperty("os.name");
@@ -152,6 +152,23 @@ public class SystemUtil {
             }
         }
         return null;
+    }
+
+    /**
+     * 获取cpu使用率
+     * @return
+     */
+    public static BigDecimal getSystemCpuLoad() {
+        double systemCpuLoad = operatingSystemMXBean.getSystemCpuLoad();
+        return new BigDecimal(systemCpuLoad);
+    }
+
+    /**
+     * 获取cpu数量
+     * @return
+     */
+    public static int getSystemCpuCount() {
+        return Runtime.getRuntime().availableProcessors();
     }
 
 
