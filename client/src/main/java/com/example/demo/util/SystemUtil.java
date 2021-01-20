@@ -12,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
-import java.lang.ref.WeakReference;
 import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.util.ArrayList;
